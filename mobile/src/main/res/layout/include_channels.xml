@@ -7,18 +7,18 @@
     android:background="@drawable/display_background">
 
     <ImageView
-        android:id="@+id/ivCh1"
+        android:id="@+id/ivCh01"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/ivCh2"
+        app:layout_constraintBottom_toTopOf="@+id/ivCh03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/led_green" />
 
     <TextView
-        android:id="@+id/tvCh1"
+        android:id="@+id/tvCh01"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -29,52 +29,24 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         android:textColor="@color/colorTextPrimary"
         app:fontFamily="sans-serif-light"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCh1"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCh01"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toEndOf="@+id/ivCh1"
-        app:layout_constraintTop_toTopOf="@+id/ivCh1" />
+        app:layout_constraintStart_toEndOf="@+id/ivCh01"
+        app:layout_constraintTop_toTopOf="@+id/ivCh01" />
 
     <ImageView
-        android:id="@+id/ivCh2"
+        android:id="@+id/ivCh03"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/ivCh3"
+        app:layout_constraintBottom_toTopOf="@+id/ivCh05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivCh1"
+        app:layout_constraintTop_toBottomOf="@+id/ivCh01"
         app:srcCompat="@drawable/led_red" />
 
     <TextView
-        android:id="@+id/tvCh2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Ch 2"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-        android:textColor="@color/colorTextPrimary"
-        app:fontFamily="sans-serif-light"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCh2"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toEndOf="@+id/ivCh2"
-        app:layout_constraintTop_toTopOf="@+id/ivCh2" />
-
-    <ImageView
-        android:id="@+id/ivCh3"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/ivCh4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivCh2"
-        app:srcCompat="@drawable/led_green" />
-
-    <TextView
-        android:id="@+id/tvCh3"
+        android:id="@+id/tvCh03"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -85,52 +57,80 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         android:textColor="@color/colorTextPrimary"
         app:fontFamily="sans-serif-light"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCh3"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCh03"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toEndOf="@+id/ivCh3"
-        app:layout_constraintTop_toTopOf="@+id/ivCh3" />
+        app:layout_constraintStart_toEndOf="@+id/ivCh03"
+        app:layout_constraintTop_toTopOf="@+id/ivCh03" />
 
     <ImageView
-        android:id="@+id/ivCh4"
+        android:id="@+id/ivCh05"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ivCh07"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivCh3"
-        app:srcCompat="@drawable/led_red" />
+        app:layout_constraintTop_toBottomOf="@+id/ivCh03"
+        app:srcCompat="@drawable/led_green" />
 
     <TextView
-        android:id="@+id/tvCh4"
+        android:id="@+id/tvCh05"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Ch 4"
+        android:text="Ch 5"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         android:textColor="@color/colorTextPrimary"
         app:fontFamily="sans-serif-light"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCh4"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCh05"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toEndOf="@+id/ivCh4"
-        app:layout_constraintTop_toTopOf="@+id/ivCh4" />
+        app:layout_constraintStart_toEndOf="@+id/ivCh05"
+        app:layout_constraintTop_toTopOf="@+id/ivCh05" />
 
     <ImageView
-        android:id="@+id/ivCh5"
+        android:id="@+id/ivCh07"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivCh05"
+        app:srcCompat="@drawable/led_red" />
+
+    <TextView
+        android:id="@+id/tvCh07"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Ch 7"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorTextPrimary"
+        app:fontFamily="sans-serif-light"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCh07"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toEndOf="@+id/ivCh07"
+        app:layout_constraintTop_toTopOf="@+id/ivCh07" />
+
+    <ImageView
+        android:id="@+id/ivCh02"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCh1"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCh01"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivCh1"
+        app:layout_constraintTop_toTopOf="@+id/ivCh01"
         app:srcCompat="@drawable/led_green" />
 
     <TextView
-        android:id="@+id/tvInputCh5"
+        android:id="@+id/tvInputCh02"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -138,28 +138,57 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:gravity="right"
-        android:text="Ch 5"
+        android:text="Ch 2"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         android:textColor="@color/colorTextPrimary"
         app:fontFamily="sans-serif-light"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCh5"
-        app:layout_constraintEnd_toStartOf="@+id/ivCh5"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCh02"
+        app:layout_constraintEnd_toStartOf="@+id/ivCh02"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/ivCh5" />
+        app:layout_constraintTop_toTopOf="@+id/ivCh02" />
 
     <ImageView
-        android:id="@+id/ivCh6"
+        android:id="@+id/ivCh04"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCh2"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCh03"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivCh2"
+        app:layout_constraintTop_toTopOf="@+id/ivCh03"
         app:srcCompat="@drawable/led_off" />
 
     <TextView
-        android:id="@+id/tvCh6"
+        android:id="@+id/tvCh04"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="right"
+        android:text="Ch 4"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorTextPrimary"
+        app:fontFamily="sans-serif-light"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCh04"
+        app:layout_constraintEnd_toStartOf="@+id/ivCh04"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/ivCh04" />
+
+    <ImageView
+        android:id="@+id/ivCh06"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCh05"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivCh05"
+        app:srcCompat="@drawable/led_green" />
+
+    <TextView
+        android:id="@+id/tvCh06"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -171,53 +200,24 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         android:textColor="@color/colorTextPrimary"
         app:fontFamily="sans-serif-light"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCh6"
-        app:layout_constraintEnd_toStartOf="@+id/ivCh6"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCh06"
+        app:layout_constraintEnd_toStartOf="@+id/ivCh06"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/ivCh6" />
+        app:layout_constraintTop_toTopOf="@+id/ivCh06" />
 
     <ImageView
-        android:id="@+id/ivCh7"
+        android:id="@+id/ivCh08"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCh3"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCh07"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivCh3"
-        app:srcCompat="@drawable/led_green" />
-
-    <TextView
-        android:id="@+id/tvCh7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:gravity="right"
-        android:text="Ch 7"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-        android:textColor="@color/colorTextPrimary"
-        app:fontFamily="sans-serif-light"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCh7"
-        app:layout_constraintEnd_toStartOf="@+id/ivCh7"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/ivCh7" />
-
-    <ImageView
-        android:id="@+id/ivCh8"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCh4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivCh4"
+        app:layout_constraintTop_toTopOf="@+id/ivCh07"
         app:srcCompat="@drawable/led_off" />
 
     <TextView
-        android:id="@+id/tvCh8"
+        android:id="@+id/tvCh08"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -229,10 +229,10 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         android:textColor="@color/colorTextPrimary"
         app:fontFamily="sans-serif-light"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCh8"
-        app:layout_constraintEnd_toStartOf="@+id/ivCh8"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCh08"
+        app:layout_constraintEnd_toStartOf="@+id/ivCh08"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/ivCh8" />
+        app:layout_constraintTop_toTopOf="@+id/ivCh08" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
