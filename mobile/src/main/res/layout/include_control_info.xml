@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/ibControl"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:tint="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_switch" />
+
+    <!--    <ImageButton
+            android:id="@+id/ibOutputs"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:tint="@color/displayText"
+            app:srcCompat="@drawable/ic_switch"
+            tools:layout_editor_absoluteX="351dp"
+            tools:layout_editor_absoluteY="24dp" />-->
+
+    <TextView
+        android:id="@+id/tvControl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="Control"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/small_icon_text_size"
+        app:fontFamily="sans-serif-light"
+        app:layout_constraintBottom_toBottomOf="@+id/ibControl"
+        app:layout_constraintStart_toEndOf="@+id/ibControl"
+        app:layout_constraintTop_toTopOf="@+id/ibControl" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorDividerLine"
+        app:layout_constraintBottom_toBottomOf="@+id/tvControl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvControl"
+        app:layout_constraintTop_toTopOf="@+id/tvControl" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvControl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:scrollbars="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvControl" />
+
+    <!--<TextView
+        android:id="@+id/tvOutputs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Control"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorTextPrimary"
+        app:fontFamily="sans-serif-light"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSecurity"
+        app:layout_constraintEnd_toEndOf="@+id/ibOutputs"
+        app:layout_constraintStart_toStartOf="@+id/ibOutputs"
+        app:layout_constraintTop_toTopOf="@+id/tvSecurity" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

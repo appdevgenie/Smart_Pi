@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/ibSecurity"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:tint="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_security" />
+
+    <!--    <ImageButton
+            android:id="@+id/ibOutputs"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:tint="@color/displayText"
+            app:srcCompat="@drawable/ic_switch"
+            tools:layout_editor_absoluteX="351dp"
+            tools:layout_editor_absoluteY="24dp" />-->
+
+    <TextView
+        android:id="@+id/tvSecurity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="Security"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorTextPrimary"
+        app:fontFamily="sans-serif-light"
+        android:textSize="@dimen/small_icon_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/ibSecurity"
+        app:layout_constraintStart_toEndOf="@+id/ibSecurity"
+        app:layout_constraintTop_toTopOf="@+id/ibSecurity" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSecurity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:scrollbars="horizontal"
+        android:fadeScrollbars="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSecurity" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorDividerLine"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSecurity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvSecurity"
+        app:layout_constraintTop_toTopOf="@+id/tvSecurity" />
+
+    <!--<ImageView
+        android:id="@+id/ivHouse"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:tint="@color/colorDarkRed"
+        app:layout_constraintBottom_toBottomOf="@+id/ibSecurity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ibSecurity"
+        app:srcCompat="@drawable/ic_house" />-->
+
+    <!--<TextView
+        android:id="@+id/tvArmed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alarm: Disarmed"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="@color/displayText"
+        app:fontFamily="sans-serif-light"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSecurity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ibSecurity"
+        app:layout_constraintTop_toTopOf="@+id/ibSecurity" />-->
+
+    <!--<TextView
+        android:id="@+id/tvOutputs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Control"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorTextPrimary"
+        app:fontFamily="sans-serif-light"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSecurity"
+        app:layout_constraintEnd_toEndOf="@+id/ibOutputs"
+        app:layout_constraintStart_toStartOf="@+id/ibOutputs"
+        app:layout_constraintTop_toTopOf="@+id/tvSecurity" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

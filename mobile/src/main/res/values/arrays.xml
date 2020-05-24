@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="icons">
+        <item>@drawable/ic_garage</item>
+        <item>@drawable/ic_door</item>
+        <item>@drawable/ic_bathroom</item>
+        <item>@drawable/ic_gate</item>
+        <item>@drawable/ic_lounge</item>
+        <item>@drawable/ic_kitchen</item>
+    </array>
+
+    <string-array name="icon_names">
+        <item>garage</item>
+        <item>door</item>
+        <item>bathroom</item>
+        <item>gate</item>
+        <item>lounge</item>
+        <item>kitchen</item>
+    </string-array>
+    
+</resources>

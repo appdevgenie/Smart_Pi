@@ -4,16 +4,29 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>-->
 
-    <color name="colorPrimary">#555</color>
-    <color name="colorPrimaryDark">#555</color>
-    <color name="colorAccent">#D81B60</color>
+    <!--<color name="colorPrimary">#061035</color>
+    <color name="colorPrimaryDark">#131313</color>
+    <color name="colorCardBackground">#061035</color>-->
+    <color name="colorAppBackground">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorDarkerGray">#121212</color>
+    <!--<color name="colorAccent">#D81B60</color>-->
+    <color name="colorAccent">#04AD32</color>
     <color name="colorDarkGreen">#669900</color>
     <color name="colorDarkRed">#cc0000</color>
     <color name="colorLightBlue">#00E6E9</color>
-    <color name="colorTextPrimary">#fff</color>
-    <color name="colorTextSecondary">#ddd</color>
-    <color name="colorLine">#ddd</color>
+    <color name="colorTextPrimary">@android:color/darker_gray</color>
+    <color name="colorTextSecondary">#0162B3</color>
+    <color name="colorDividerLine">@android:color/darker_gray</color>
+    <color name="colorLine">#555</color>
     <!--<color name="displayBackground">#0C4463</color>-->
     <color name="displayBackground">#000</color>
     <color name="displayText">#ff00ffff</color>
+    <color name="darkBlueGray">#455A64</color>
+    <color name="darkerBlueGray">#1F292D</color>
+
+    <color name="colorPrimary">#031D52</color>
+    <color name="colorPrimaryDark">#020B1F</color>
+    <color name="colorCardBackground">#031C50</color>
+    <color name="colorMainBackground">#041335</color>
 </resources>

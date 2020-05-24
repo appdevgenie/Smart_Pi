@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.InputChannelsActivity" />
+        <activity android:name=".activities.SecurityItemActivity" />
     </application>
 
 </manifest>
