@@ -7,19 +7,23 @@ import androidx.core.widget.ImageViewCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.appdevgenie.smartpi.R;
 import com.appdevgenie.smartpi.adapters.InfoAdapter;
 import com.appdevgenie.smartpi.models.PiStatus;
+import com.appdevgenie.smartpi.models.SecurityModel;
 import com.appdevgenie.smartpi.models.User;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,6 +39,8 @@ import com.google.firebase.iid.InstanceIdResult;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import static com.appdevgenie.smartpi.utils.FormatDate.getFormattedDate;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String PI_CONTROL = "pi_control";
@@ -46,13 +52,21 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
+    private TextView tvStatusInfo;
     private TextView tvOnline;
     private TextView tvTemp;
+    private TextView tvSecurity;
+    private TextView tvPower;
+    private TextView tvNotify;
     private ImageView ivTemp;
     private ImageView ivOnline;
+    private ImageView ivSecurity;
+    private ImageView ivPower;
+    private ImageView ivNotify;
     private ImageButton ibInputs, ibOutputs;
     private ImageButton ibSecurity;
     private RecyclerView rvSecurity, rvControl;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,29 +128,49 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        tvStatusInfo = findViewById(R.id.text_status_info);
+        progressBar = findViewById(R.id.progressBar);
+
         ConstraintLayout clStatus = findViewById(R.id.include_status_display);
         tvOnline = clStatus.findViewById(R.id.text_online);
+        tvOnline.setText("Connection");
         ivOnline = clStatus.findViewById(R.id.image_online);
         tvTemp = clStatus.findViewById(R.id.text_temp);
+        tvTemp.setText("Temp");
         ivTemp = clStatus.findViewById(R.id.image_temp);
+        tvSecurity = clStatus.findViewById(R.id.text_security);
+        tvSecurity.setText("Security");
+        ivSecurity = clStatus.findViewById(R.id.image_security);
+        //ImageViewCompat.setImageTintList(ivSecurity, ColorStateList.valueOf(Color.YELLOW));
+        tvPower = clStatus.findViewById(R.id.text_power);
+        tvPower.setText("Power");
+        ivPower = clStatus.findViewById(R.id.image_power);
+        //ImageViewCompat.setImageTintList(ivPower, ColorStateList.valueOf(Color.YELLOW));
+        tvNotify = clStatus.findViewById(R.id.text_notify);
+        tvNotify.setText("Notify");
+        ivNotify = clStatus.findViewById(R.id.image_notify);
 
-        ArrayList<String> source = new ArrayList<>();
+        /*ArrayList<String> source = new ArrayList<>();
         source.add("Front door");
         source.add("Back door");
         source.add("Garage");
         source.add("Gate");
         source.add("Lounge");
         source.add("Kitchen");
-        source.add("Bathroom");
+        source.add("Bathroom");*/
+
+        ArrayList<SecurityModel> source = SecurityModel.loadSecurityModels();
 
         ConstraintLayout clSecurity = findViewById(R.id.include_security_info);
         rvSecurity = clSecurity.findViewById(R.id.rvSecurity);
         //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
+        //StaggeredGridLayoutManager gridLayoutManager = new StaggeredGridLayoutManager (2, GridLayoutManager.HORIZONTAL);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 2, GridLayoutManager.HORIZONTAL, false);
         rvSecurity.setLayoutManager(gridLayoutManager);
-        rvSecurity.setHasFixedSize(false);
-        InfoAdapter infoAdapter = new InfoAdapter(source);
+        rvSecurity.setHasFixedSize(true);
+        InfoAdapter infoAdapter = new InfoAdapter(this, source);
         rvSecurity.setAdapter(infoAdapter);
+        rvSecurity.setVisibility(View.INVISIBLE);
 
         ibSecurity = clSecurity.findViewById(R.id.ibSecurity);
         //ibSecurity.setOnClickListener(this);
@@ -151,20 +185,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupStatusListener() {
+        progressBar.setVisibility(View.VISIBLE);
 
         Query query = databaseReference.child(STATUS_CHILD);
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Log.d(TAG, "onDataChanged: " + String.valueOf(dataSnapshot.getValue()));
-
+                progressBar.setVisibility(View.INVISIBLE);
+                rvSecurity.setVisibility(View.VISIBLE);
 
                 PiStatus piStatus = dataSnapshot.getValue(PiStatus.class);
                 if (piStatus != null) {
-                    //tvIP.setText(piStatus.getIp());
-
                     if (piStatus.isOnline()) {
                         tvOnline.setText("Online");
+                        tvStatusInfo.setText(TextUtils.concat("Online: ", getFormattedDate(piStatus.getLastOnline()), "       IP: ", piStatus.getIp()));
+
                         ImageViewCompat.setImageTintList(ivOnline, ColorStateList.valueOf(Color.GREEN));
                         float temperature = piStatus.getTemperature();
 
@@ -186,18 +222,21 @@ public class MainActivity extends AppCompatActivity {
 
                     } else {
                         tvOnline.setText("Offline");
+                        tvStatusInfo.setText("");
                         ImageViewCompat.setImageTintList(ivOnline, ColorStateList.valueOf(Color.RED));
-                        tvTemp.setText("- - . - -");
+                        tvTemp.setText(TextUtils.concat("- - . - -", " \u00b0C"));
 
                     }
 
-                    /*if (piStatus.isNotify()) {
-                        tvNotify.setText("Notification is ON");
-                        tbNotify.setChecked(true);
+                    if (piStatus.isNotify()) {
+                        //tvNotify.setText("Notification is ON");
+                        ImageViewCompat.setImageTintList(ivNotify, ColorStateList.valueOf(Color.GREEN));
+                        ivNotify.setImageResource(R.drawable.ic_notifications_active);
                     } else {
-                        tvNotify.setText("Notification is OFF");
-                        tbNotify.setChecked(false);
-                    }*/
+                        //tvNotify.setText("Notification is OFF");
+                        ImageViewCompat.setImageTintList(ivNotify, ColorStateList.valueOf(Color.RED));
+                        ivNotify.setImageResource(R.drawable.ic_notifications_off_black_24dp);
+                    }
 
                 }
 
@@ -205,6 +244,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressBar.setVisibility(View.INVISIBLE);
             }
         });
     }

@@ -6,17 +6,17 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    app:elevation="4dp"
-    app:cardCornerRadius="10dp"
-    app:cardBackgroundColor="@color/colorCardBackground"
     android:layout_margin="4dp"
-    android:padding="15dp">
+    android:padding="15dp"
+    app:cardBackgroundColor="@color/colorCardBackground"
+    app:cardCornerRadius="10dp"
+    app:elevation="8dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="4dp">
+        android:padding="16dp">
 
         <!-- <ImageView
              android:id="@+id/ivIcon"
@@ -39,48 +39,38 @@
             android:id="@+id/tvInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/colorTextPrimary"
             app:fontFamily="sans-serif-light"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline3"
-            app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/ivInfo"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/ivInfo"
+            app:layout_constraintTop_toTopOf="@+id/ivInfo"
             tools:text="Front door" />
 
         <TextView
             android:id="@+id/tvInfoStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:text="Closed"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/colorAccent"
             app:fontFamily="sans-serif-light"
             app:layout_constraintBottom_toBottomOf="@+id/ivInfo"
-            app:layout_constraintEnd_toStartOf="@+id/ivInfo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/ivInfo" />
+            app:layout_constraintStart_toStartOf="@+id/tvInfo"
+            app:layout_constraintTop_toBottomOf="@+id/tvInfo"
+            tools:text="Closed" />
 
         <ImageView
             android:id="@+id/ivInfo"
             android:layout_width="@dimen/large_icon_size"
             android:layout_height="@dimen/large_icon_size"
-            android:layout_marginTop="16dp"
             android:tint="@android:color/darker_gray"
-            app:layout_constraintEnd_toStartOf="@+id/guideline3"
-            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_garage" />
 
-        <ImageView
+        <!--<ImageView
             android:id="@+id/ivNotify"
             android:layout_width="15dp"
             android:layout_height="15dp"
@@ -89,14 +79,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivInfo"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_notifications_active" />
+            app:srcCompat="@drawable/ic_notifications_active" />-->
 
-        <androidx.constraintlayout.widget.Guideline
+        <!--<androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
+            app:layout_constraintGuide_percent="0.5" />-->
 
         <!--<ToggleButton
             android:id="@+id/toggleButton"
